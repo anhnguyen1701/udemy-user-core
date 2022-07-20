@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
 import { RedisModule } from './redis/redis.module';
 import { MongoModule } from './mongo/mongo.module';
+import * as mongoose from 'mongoose';
+
+mongoose.set('debug', true);
 
 @Module({
   imports: [
