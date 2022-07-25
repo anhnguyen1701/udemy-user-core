@@ -4,6 +4,7 @@ package user;
 
 service UserService {
     rpc FindOne (UserId) returns (User);
+    rpc FindMany (UserIdList) returns (UserList);
 }
 
 message UserId {
@@ -15,6 +16,14 @@ message User {
     string name = 2;
     string email = 3;
     string password = 4;
-    bool verify = 6;
-    string avatar = 7;
+    bool verify = 5;
+    string avatar = 6;
+}
+
+message UserList {
+    repeated User user = 1;
+}
+
+message UserIdList {
+    repeated string listId = 1;
 }
