@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
 import { RedisModule } from './redis/redis.module';
 import { MongoModule } from './mongo/mongo.module';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
+import { EventModule } from './event/event.module';
 import * as mongoose from 'mongoose';
 
 mongoose.set('debug', true);
@@ -17,6 +19,8 @@ mongoose.set('debug', true);
       autoIndex: true,
       minPoolSize: 5,
     }),
+    EventModule,
+    // RabbitmqModule,
   ],
 })
 export class AppModule {}
